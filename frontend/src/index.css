@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-ink: #0f2746;
+  --brand-teal: #0f766e;
+  --brand-gold: #d8b04c;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 font-sans;
+}
+
+@layer components {
+  .motion-fade-up {
+    animation: fadeUp 220ms ease-out both;
+  }
+
+  .motion-stagger-1 {
+    animation: fadeUp 170ms ease-out both;
+  }
+
+  .motion-stagger-2 {
+    animation: fadeUp 210ms ease-out both;
+    animation-delay: 70ms;
+  }
+
+  .motion-stagger-3 {
+    animation: fadeUp 240ms ease-out both;
+    animation-delay: 120ms;
+  }
+
+  .brand-hero {
+    background:
+      radial-gradient(circle at 18% 82%, rgba(15, 118, 110, 0.2), transparent 34%),
+      linear-gradient(140deg, var(--brand-ink) 0%, #133663 58%, #0f5f68 100%);
+  }
+
+  .brand-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.11) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.11) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.08;
+  }
+
+  .brand-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(3px);
+    pointer-events: none;
+  }
+
+  .brand-btn {
+    background: linear-gradient(115deg, var(--brand-ink) 0%, #1d4878 70%);
+    box-shadow: 0 10px 16px -12px rgba(15, 39, 70, 0.55);
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+  }
+
+  .brand-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+    box-shadow: 0 16px 22px -14px rgba(15, 39, 70, 0.8);
+  }
+
+  .brand-btn:active {
+    transform: translateY(0);
+  }
+
+  .brand-input {
+    @apply rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .brand-input:focus {
+    border-color: var(--brand-teal);
+    box-shadow:
+      0 0 0 3px rgba(15, 118, 110, 0.18),
+      0 0 0 6px rgba(216, 176, 76, 0.15);
+  }
+
+  .brand-link {
+    color: var(--brand-teal);
+  }
+
+  .brand-link:hover {
+    color: #0b5f59;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
