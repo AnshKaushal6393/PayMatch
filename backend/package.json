@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node src/index.js",
     "start": "node src/index.js",
-    "seed": "node src/modules/bootstrap/seedDemo.js"
+    "seed": "node src/modules/bootstrap/seedDemo.js",
+    "seed:large": "node src/modules/bootstrap/seedLargeMockData.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
